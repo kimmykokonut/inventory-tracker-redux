@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "./Menu";
 import AddFlavorForm from "./AddFlavorForm";
 import FlavorDetail from "./FlavorDetail";
+import EditFlavorForm from "./EditFlavorForm";
 import reeses from "./../assets/reeses.jpg";
 import oreo from "./../assets/oreo.jpeg";
 import sorbet from "./../assets/sorbet.jpeg";
@@ -45,14 +46,16 @@ class IceCreamControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       menuList: flavorArray,
-      selectedFlavor: null
+      selectedFlavor: null,
+      editing: false
     };
   }
   handleClick = () => {
     if (this.state.selectedFlavor != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedFlavor: null
+        selectedFlavor: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
@@ -68,12 +71,32 @@ class IceCreamControl extends React.Component {
     const selectFlavor = this.state.menuList.filter(flavor => flavor.id === id)[0];
     this.setState({ selectedFlavor: selectFlavor });
   }
+  handleEditClick = () => {
+    console.log('reached');
+    this.setState({editing: true});
+  }
+  handleEditFlavor = (flavorToEdit) => {
+    const editedFlavorList = this.state.menuList
+    .filter(flavor => flavor.id !== this.state.selectedFlavor.id)
+    .concat(flavorToEdit);
+    this.setState({
+      menuList: editedFlavorList,
+      editing: false,
+      selectedFlavor: null
+    });
+  }
   render() {
     let currentVisibleState = null;
     let buttonText = null;
-
-    if (this.state.selectedFlavor != null) {
-      currentVisibleState = <FlavorDetail flavor={this.state.selectedFlavor} />
+    if (this.state.editing) {
+      currentVisibleState = <EditFlavorForm 
+      flavor = {this.state.selectedFlavor} 
+      onEditTicket = {this.handleEditFlavor} />
+      buttonText="Return to menu";
+    } else if (this.state.selectedFlavor != null) {
+      currentVisibleState = <FlavorDetail 
+      flavor={this.state.selectedFlavor}
+      onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Menu";
     } else if (this.state.formVisibleOnPage) {
       currentVisibleState = <AddFlavorForm
@@ -88,10 +111,7 @@ class IceCreamControl extends React.Component {
       <>
         {currentVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
-
         <hr />
-        <h3>Flavor Detail</h3>
-        <h3>Edit Form</h3>
       </>
     );
   }

@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 const FlavorDetail = (props) => {
   const imgStyle = {
     width: '100px',
@@ -17,11 +15,14 @@ const FlavorDetail = (props) => {
     <p>{flavor.available}</p>
     <p>{flavor.allergens}</p>
     <p>{flavor.qtyInStock}</p>
+    <br />
+    <button onClick={ props.onClickingEdit }>Update info</button>
     </>
   );
 }
 FlavorDetail.propTypes = {
-  flavor: PropTypes.object
+  flavor: PropTypes.object,
+  onClickingEdit: PropTypes.func
 }
 
 export default FlavorDetail;
