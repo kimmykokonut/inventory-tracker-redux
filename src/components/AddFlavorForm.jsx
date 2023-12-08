@@ -1,7 +1,16 @@
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 const AddFlavorForm = (props) => {
   function handleCreateFlavorFormSubmission(e) {
     e.preventDefault();
+    props.onCreateFlavor({
+      name: e.target.name.value,
+      price: e.target.price.value,
+      allergens: e.target.allergens.value,
+      qtyInStock: parseInt(e.target.qtyInStock.value),
+      id: v4()
+    })
     console.log(e.target.name.value);
   }
   return (
@@ -31,5 +40,8 @@ const AddFlavorForm = (props) => {
       </form>
     </>
   );
+}
+AddFlavorForm.propTypes = {
+  onCreateFlavor: PropTypes.func
 }
 export default AddFlavorForm;

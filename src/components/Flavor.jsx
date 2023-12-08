@@ -18,6 +18,6 @@ Flavor.propTypes = {
   available: PropTypes.string,
   price: PropTypes.string,
   allergens: PropTypes.string,
-  qtyInStock: PropTypes.string
+  qtyInStock: PropTypes.number
 };
 export default Flavor;
