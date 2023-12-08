@@ -7,19 +7,21 @@ const Menu = (props) => {
   return(
     <>
       <h2>Current Menu</h2>
-      {currentInv.map((flavor, index) =>
+      {currentInv.map((flavor) =>
         <Flavor
+        whenFlavorClicked={ props.onFlavorSelection }
         name={flavor.name}
-        available={flavor.available}
+        imgSrc={flavor.imgSrc}
         price={flavor.price}
-        allergens={flavor.allergens}
         qtyInStock={flavor.qtyInStock}
-        key={index} />
+        id={flavor.id}
+        key={flavor.id} />
       )}
     </>
   );
 }
 Menu.propTypes = {
-  menuList: PropTypes.array
+  menuList: PropTypes.array,
+  onFlavorSelection: PropTypes.func
 };
 export default Menu;

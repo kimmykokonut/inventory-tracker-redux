@@ -11,7 +11,6 @@ const AddFlavorForm = (props) => {
       qtyInStock: parseInt(e.target.qtyInStock.value),
       id: v4()
     })
-    console.log(e.target.name.value);
   }
   return (
     <>
