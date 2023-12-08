@@ -8,7 +8,7 @@ const Flavor = (props) => {
       <p><em>{props.available}</em></p>
     <p>Price: {props.price}</p>
     <p>Allergens: {props.allergens}</p>
-    <p>In stock: {props.qtyInStock}</p>
+    <p>In stock: {props.qtyInStock} pints</p>
     </>
   );
 }
