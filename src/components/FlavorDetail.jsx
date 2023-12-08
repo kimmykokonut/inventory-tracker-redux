@@ -13,8 +13,8 @@ const FlavorDetail = (props) => {
     <img style={imgStyle} src={flavor.imgSrc} alt={flavor.alt}/>
     <p>{flavor.price}</p>
     <p>{flavor.available}</p>
-    <p>{flavor.allergens}</p>
-    <p>{flavor.qtyInStock}</p>
+    <p>Allergens: {flavor.allergens}</p>
+    <p>In Stock: {flavor.qtyInStock} pints</p>
     <br />
     <button onClick={ props.onClickingEdit }>Update info</button>
     </>

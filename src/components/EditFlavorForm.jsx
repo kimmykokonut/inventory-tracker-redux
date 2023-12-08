@@ -1,4 +1,5 @@
 import ReusableForm from "./ReusableForm";
+import PropTypes from 'prop-types';
 
 const EditFlavorForm = (props) => {
   const { flavor } = props;
@@ -10,7 +11,7 @@ const EditFlavorForm = (props) => {
       price: e.target.price.value,
       allergens: e.target.allergens.value,
       qtyInStock: parseInt(e.target.qtyInStock.value),
-      id: props.id
+      id: flavor.id
     });
   }
   return(

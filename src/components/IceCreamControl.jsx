@@ -88,6 +88,7 @@ class IceCreamControl extends React.Component {
   render() {
     let currentVisibleState = null;
     let buttonText = null;
+    
     if (this.state.editing) {
       currentVisibleState = <EditFlavorForm 
       flavor = {this.state.selectedFlavor} 
@@ -95,7 +96,7 @@ class IceCreamControl extends React.Component {
       buttonText="Return to menu";
     } else if (this.state.selectedFlavor != null) {
       currentVisibleState = <FlavorDetail 
-      flavor={this.state.selectedFlavor}
+      flavor= {this.state.selectedFlavor}
       onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Menu";
     } else if (this.state.formVisibleOnPage) {
