@@ -59,7 +59,6 @@ class IceCreamControl extends React.Component {
         formVisibleOnPage: !prevState.formVisibleOnPage
       }));
     }
-
   }
   handleCreateFlavor = (newFlavor) => {
     const newMenuList = this.state.menuList.concat(newFlavor);
