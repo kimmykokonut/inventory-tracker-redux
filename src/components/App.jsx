@@ -1,10 +1,12 @@
 import Header from "./Header";
+import IceCreamControl from "./IceCreamControl";
 
 function App() {
-  return(
+  return (
     <>
-    <Header />
-    <hr/>
+      <Header />
+      <hr />
+      <IceCreamControl />
     </>
   )
 }
