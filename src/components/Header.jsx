@@ -1,3 +1,6 @@
+import logo from './../assets/logo.png';
+import gelato from './../assets/ice-cream-banner.jpeg';
+
 function Header() {
   const styleHead = {
     display: 'flex',
@@ -5,9 +8,17 @@ function Header() {
     justifyContent: 'space-between',
     alignItems: 'center'
   }
+  const styleImg = {
+    height: 'auto',
+    width: 'auto',
+    overflow: 'hidden',
+  }
   return (
     <>
-      <h1>Praline's Own Made Ice Cream</h1>
+      <img src={logo} alt="Praline's logo" />
+      <div>
+      <img src={gelato} alt="Ice Cream in tubs" style={styleImg}></img>
+      </div> 
       <hr />
       <div style={styleHead}>
         <button id="navBtn">☰</button>
