@@ -1,7 +1,9 @@
+import Header from "./Header";
+
 function App() {
   return(
     <>
-    <h1>Praline's Ice Cream</h1>
+    <Header />
     <hr/>
     </>
   )
