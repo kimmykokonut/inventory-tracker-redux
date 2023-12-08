@@ -1,12 +1,14 @@
 import React from "react";
 import Menu from "./Menu";
-import AddFlavor from "./AddFlavor";
+import AddFlavorForm from "./AddFlavorForm";
+//import baseMenu...
 
 class IceCreamControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false
+      //menuList: baseMenu
     };
   }
   handleClick = () => {
@@ -17,7 +19,7 @@ class IceCreamControl extends React.Component {
     let currentVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentVisibleState = <AddFlavor />
+      currentVisibleState = <AddFlavorForm />
       buttonText="Return to Menu"
     } else {
       currentVisibleState = <Menu />

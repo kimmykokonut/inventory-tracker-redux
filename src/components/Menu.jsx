@@ -1,6 +1,7 @@
 import Flavor from "./Flavor";
+import PropTypes from 'prop-types';
 
-const Menu = () => {
+const Menu = (props) => {
   const flavorArray = [
     {
       name: 'Reese\'s Nightmare',
@@ -24,6 +25,7 @@ const Menu = () => {
       qtyInStock: '130'
     },
   ];
+  
   return(
     <>
       <h2>Menu</h2>
