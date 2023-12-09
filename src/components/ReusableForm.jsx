@@ -7,12 +7,22 @@ const ReusableForm = (props) => {
         <label>Name: <input
           type='text'
           name='name'
-          placeholder="i.e. Rocky Road" /> </label>
+          placeholder="Rocky Road" /> </label>
+        <br />
+        <label>Description: <input
+          type='text'
+          name='description'
+          placeholder="Chocolate base with marshmallows" /> </label>
         <br />
         <label>Price: <input
           type='text'
           name='price'
-          placeholder="$?" /> </label>
+          placeholder="4.50" /> </label>
+        <br />
+        <label>Image url: <input
+          type='text'
+          name='imgSrc'
+          placeholder="url" /> </label>
         <br />
         <label>Allergens: <input
           type='text'

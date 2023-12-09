@@ -7,6 +7,8 @@ const AddFlavorForm = (props) => {
     e.preventDefault();
     props.onCreateFlavor({
       name: e.target.name.value,
+      description: e.target.description.value,
+      imgSrc: e.target.imgSrc.value,
       price: e.target.price.value,
       allergens: e.target.allergens.value,
       qtyInStock: parseInt(e.target.qtyInStock.value),

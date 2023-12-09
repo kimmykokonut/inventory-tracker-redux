@@ -10,9 +10,10 @@ const FlavorDetail = (props) => {
     <>
       <h1>Flavor Facts</h1>
       <h3>{flavor.name}</h3>
+      <p><em>{flavor.description}</em></p>
       <img style={imgStyle} src={flavor.imgSrc} alt={flavor.alt} />
-      <p>{flavor.price} per pint</p>
-      <p>{flavor.available}</p>
+      <p>${flavor.price} per pint</p>
+      <p>Availability: <em>{flavor.available}</em></p>
       <p>Allergens: {flavor.allergens}</p>
       <p>In Stock: {flavor.qtyInStock} pints</p>
       <br />

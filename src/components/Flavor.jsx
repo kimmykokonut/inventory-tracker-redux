@@ -10,8 +10,7 @@ const Flavor = (props) => {
     <div onClick={() => props.whenFlavorClicked(props.id)}>
     <h3>{props.name}</h3>
     <img style={imgStyle} src={props.imgSrc} alt={props.alt} />
-      <p><em>{props.available}</em></p>
-    <p>Price: {props.price} per pint</p>
+    <p>Price: ${props.price} per pint</p>
     <p>In stock: {props.qtyInStock} pints</p>
       </div>
     </>
@@ -20,6 +19,7 @@ const Flavor = (props) => {
 
 Flavor.propTypes = {
   name: PropTypes.string,
+  description: PropTypes.string,
   imgSrc: PropTypes.string,
   alt: PropTypes.string,
   available: PropTypes.string,
