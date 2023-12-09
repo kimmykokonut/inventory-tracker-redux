@@ -2,11 +2,19 @@ import Flavor from "./Flavor";
 import PropTypes from 'prop-types';
 
 const Menu = (props) => {
+  const itemStyle = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+  }
+
   let currentInv = props.menuList;
   
   return(
     <>
       <h2>Current Menu</h2>
+      <div style={itemStyle}>
       {currentInv.map((flavor) =>
         <Flavor
         whenFlavorClicked={ props.onFlavorSelection }
@@ -18,6 +26,7 @@ const Menu = (props) => {
         id={flavor.id}
         key={flavor.id} />
       )}
+      </div>
     </>
   );
 }
