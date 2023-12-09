@@ -56,6 +56,8 @@ _If this is too much and you just want to see what it looks like, go to my githu
 
 ## Known Bugs
 * None known at this time
+* I would like to have a message print if inventory gets to zero or disable the Buy pint button
+* It would be nice to make the header functional once I attain those skills
 
 ## License
 MIT License. See license.md for further information
