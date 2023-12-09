@@ -82,7 +82,7 @@ class IceCreamControl extends React.Component {
     this.setState({
       menuList: updatedMenuList,
       selectedFlavor: null
-    }); //clck button sending to detail page unupdted but updated on main
+    }); 
   }
   handleCreateFlavor = (newFlavor) => {
     const newMenuList = this.state.menuList.concat(newFlavor);

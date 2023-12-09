@@ -13,7 +13,7 @@ const Flavor = (props) => {
         <p>Price: ${props.price} per pint</p>
         <p>In stock: {props.qtyInStock} pints</p>
       </div>
-      <button type="submit" onClick={props.whenBuyClicked}>Buy 1 pint</button>
+      <button type="submit" onClick={() => props.whenBuyClicked(props.id)}>Buy 1 pint</button>
     </>
   );
 }
