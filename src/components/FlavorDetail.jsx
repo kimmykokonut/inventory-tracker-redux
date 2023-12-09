@@ -8,21 +8,23 @@ const FlavorDetail = (props) => {
   const { flavor } = props;
   return (
     <>
-    <h1>Flavor Facts</h1>
-    <h3>{flavor.name}</h3>
-    <img style={imgStyle} src={flavor.imgSrc} alt={flavor.alt}/>
-    <p>{flavor.price}</p>
-    <p>{flavor.available}</p>
-    <p>Allergens: {flavor.allergens}</p>
-    <p>In Stock: {flavor.qtyInStock} pints</p>
-    <br />
-    <button onClick={ props.onClickingEdit }>Update info</button>
+      <h1>Flavor Facts</h1>
+      <h3>{flavor.name}</h3>
+      <img style={imgStyle} src={flavor.imgSrc} alt={flavor.alt} />
+      <p>{flavor.price}</p>
+      <p>{flavor.available}</p>
+      <p>Allergens: {flavor.allergens}</p>
+      <p>In Stock: {flavor.qtyInStock} pints</p>
+      <br />
+      <button onClick={props.onClickingEdit}>Update info</button>
+      <button onClick={props.onClickRestock}>Order more ice cream!</button>
     </>
   );
 }
 FlavorDetail.propTypes = {
   flavor: PropTypes.object,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickRestock: PropTypes.func
 }
 
 export default FlavorDetail;

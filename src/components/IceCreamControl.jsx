@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import AddFlavorForm from "./AddFlavorForm";
 import FlavorDetail from "./FlavorDetail";
 import EditFlavorForm from "./EditFlavorForm";
+import RestockForm from "./RestockForm";
 import reeses from "./../assets/reeses.jpg";
 import oreo from "./../assets/oreo.jpeg";
 import sorbet from "./../assets/sorbet.jpeg";
@@ -47,7 +48,8 @@ class IceCreamControl extends React.Component {
       formVisibleOnPage: false,
       menuList: flavorArray,
       selectedFlavor: null,
-      editing: false
+      editing: false,
+      restock: false
     };
   }
   handleClick = () => {
@@ -55,7 +57,8 @@ class IceCreamControl extends React.Component {
       this.setState({
         formVisibleOnPage: false,
         selectedFlavor: null,
-        editing: false
+        editing: false,
+        restock: false
       });
     } else {
       this.setState(prevState => ({
@@ -85,11 +88,37 @@ class IceCreamControl extends React.Component {
       selectedFlavor: null
     });
   }
+  handleRestockClick = () => {
+    this.setState({restock: true});
+  }
+  handleRestockFlavor = (updatedQty) => {
+    const updatedMenuList = this.state.menuList
+    .map((flavor) => {
+        if (flavor.id === this.state.selectedFlavor.id) {
+          return {
+            ...flavor,
+            qtyInStock: flavor.qtyInStock + updatedQty //this is an obj. 
+          };
+        }
+        return flavor;
+      });
+    this.setState({
+      menuList: updatedMenuList,
+      editing: false,
+      selectedFlavor: null, 
+      restock: false,
+    });
+  }
   render() {
     let currentVisibleState = null;
     let buttonText = null;
-    
-    if (this.state.editing) {
+
+    if (this.state.restock) {
+      currentVisibleState = <RestockForm
+      flavor = {this.state.selectedFlavor} 
+      onRestockItem={this.handleRestockFlavor}/>
+      buttonText="Return to menu"
+    } else if (this.state.editing) {
       currentVisibleState = <EditFlavorForm 
       flavor = {this.state.selectedFlavor} 
       onEditTicket = {this.handleEditFlavor} />
@@ -97,7 +126,7 @@ class IceCreamControl extends React.Component {
     } else if (this.state.selectedFlavor != null) {
       currentVisibleState = <FlavorDetail 
       flavor= {this.state.selectedFlavor}
-      onClickingEdit={this.handleEditClick} />
+        onClickingEdit={this.handleEditClick} onClickRestock={this.handleRestockClick} />
       buttonText = "Return to Menu";
     } else if (this.state.formVisibleOnPage) {
       currentVisibleState = <AddFlavorForm
