@@ -1,5 +1,6 @@
 import Flavor from "./Flavor";
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const Menu = (props) => {
   let currentInv = props.menuList;
@@ -10,6 +11,7 @@ const Menu = (props) => {
       {currentInv.map((flavor) =>
         <Flavor
         whenFlavorClicked={ props.onFlavorSelection }
+        whenBuyClicked={() => props.onClickingBuy(flavor.id) } //flavor?
         name={flavor.name}
         imgSrc={flavor.imgSrc}
         price={flavor.price}
@@ -22,6 +24,7 @@ const Menu = (props) => {
 }
 Menu.propTypes = {
   menuList: PropTypes.array,
-  onFlavorSelection: PropTypes.func
+  onFlavorSelection: PropTypes.func,
+  onClickingBuy: PropTypes.func
 };
 export default Menu;

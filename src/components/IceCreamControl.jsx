@@ -69,6 +69,21 @@ class IceCreamControl extends React.Component {
       }));
     }
   }
+  handleBuyClick = (flavorID) => {
+    const updatedMenuList = this.state.menuList.map((flavor) => {
+      if (flavor.id === flavorID && flavor.qtyInStock > 0) {
+        return {
+          ...flavor,
+          qtyInStock: flavor.qtyInStock - 1,
+        };
+      }
+      return flavor;
+    });
+    this.setState({
+      menuList: updatedMenuList,
+      selectedFlavor: null
+    }); //clck button sending to detail page unupdted but updated on main
+  }
   handleCreateFlavor = (newFlavor) => {
     const newMenuList = this.state.menuList.concat(newFlavor);
     this.setState({ menuList: newMenuList, formVisibleOnPage: false });
@@ -136,7 +151,9 @@ class IceCreamControl extends React.Component {
       buttonText = "Return to Menu"
     } else {
       currentVisibleState = <Menu
-        menuList={this.state.menuList} onFlavorSelection={this.handleChangingSelectFlavor} />;
+        menuList={this.state.menuList} onFlavorSelection={this.handleChangingSelectFlavor}
+        onClickingBuy={this.handleBuyClick} 
+        />;
       buttonText = "Add custom flavor"
     }
     return (

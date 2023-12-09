@@ -5,14 +5,15 @@ const Flavor = (props) => {
     width: '100px',
     height: 'auto'
   }
-  return(
+  return (
     <>
-    <div onClick={() => props.whenFlavorClicked(props.id)}>
-    <h3>{props.name}</h3>
-    <img style={imgStyle} src={props.imgSrc} alt={props.alt} />
-    <p>Price: ${props.price} per pint</p>
-    <p>In stock: {props.qtyInStock} pints</p>
+      <div onClick={() => props.whenFlavorClicked(props.id)}>
+        <h3>{props.name}</h3>
+        <img style={imgStyle} src={props.imgSrc} alt={props.alt} />
+        <p>Price: ${props.price} per pint</p>
+        <p>In stock: {props.qtyInStock} pints</p>
       </div>
+      <button type="submit" onClick={props.whenBuyClicked}>Buy 1 pint</button>
     </>
   );
 }
@@ -27,6 +28,7 @@ Flavor.propTypes = {
   allergens: PropTypes.string,
   qtyInStock: PropTypes.number,
   id: PropTypes.string,
-  whenFlavorClicked: PropTypes.func
+  whenFlavorClicked: PropTypes.func,
+  whenBuyClicked: PropTypes.func
 };
 export default Flavor;
