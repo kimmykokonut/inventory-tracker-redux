@@ -11,7 +11,7 @@ const FlavorDetail = (props) => {
       <h1>Flavor Facts</h1>
       <h3>{flavor.name}</h3>
       <img style={imgStyle} src={flavor.imgSrc} alt={flavor.alt} />
-      <p>{flavor.price}</p>
+      <p>{flavor.price} per pint</p>
       <p>{flavor.available}</p>
       <p>Allergens: {flavor.allergens}</p>
       <p>In Stock: {flavor.qtyInStock} pints</p>
@@ -26,5 +26,4 @@ FlavorDetail.propTypes = {
   onClickingEdit: PropTypes.func,
   onClickRestock: PropTypes.func
 }
-
 export default FlavorDetail;

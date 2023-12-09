@@ -11,7 +11,7 @@ const Flavor = (props) => {
     <h3>{props.name}</h3>
     <img style={imgStyle} src={props.imgSrc} alt={props.alt} />
       <p><em>{props.available}</em></p>
-    <p>Price: {props.price}</p>
+    <p>Price: {props.price} per pint</p>
     <p>In stock: {props.qtyInStock} pints</p>
       </div>
     </>

@@ -97,7 +97,7 @@ class IceCreamControl extends React.Component {
         if (flavor.id === this.state.selectedFlavor.id) {
           return {
             ...flavor,
-            qtyInStock: flavor.qtyInStock + updatedQty //this is an obj. 
+            qtyInStock: flavor.qtyInStock + updatedQty
           };
         }
         return flavor;
