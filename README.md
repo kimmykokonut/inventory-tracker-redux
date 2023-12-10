@@ -48,7 +48,7 @@ _$ npm install uuid_
 
 8.  Now you can access my code. To see it rendered in a browser you can start a development server by typing _$ npm run dev_ in the VS Code terminal and it should open a browser window.  If it doesn't automatically load, type o + ENTER on your keyboard and it will open the server on your default browser.
 
-_If this is too much and you just want to see what it looks like, go to my github pages for this project here:  https://kimmykokonut.github.io/inventory-tracker_
+_If this is too much and you just want to see what it looks like, go to my github pages for this project here:  https://kimmykokonut.github.io/inventory-tracker_ (currently not displaying)
 
 ### Optional:
 * To learn more about Vite, go here: https://vitejs.dev/
