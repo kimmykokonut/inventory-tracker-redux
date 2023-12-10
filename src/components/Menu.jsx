@@ -6,9 +6,8 @@ const Menu = (props) => {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   }
-
   let currentInv = props.menuList;
   
   return(

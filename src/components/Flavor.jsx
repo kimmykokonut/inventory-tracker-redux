@@ -5,19 +5,25 @@ const Flavor = (props) => {
     width: '100px',
     height: 'auto'
   }
+  const itemStyle = {
+    border: '2px solid black',
+    padding: '1%',
+    margin: '1%',
+  }
   return (
     <>
-      <div onClick={() => props.whenFlavorClicked(props.id)}>
-        <h3>{props.name}</h3>
-        <img style={imgStyle} src={props.imgSrc} alt={props.alt} />
-        <p>Price: ${props.price} per pint</p>
-        <p>In stock: {props.qtyInStock} pints</p>
+      <div style={itemStyle}>
+        <div onClick={() => props.whenFlavorClicked(props.id)}>
+          <h3>{props.name}</h3>
+          <img style={imgStyle} src={props.imgSrc} alt={props.alt} />
+          <p>Price: ${props.price} per pint</p>
+          <p>In stock: {props.qtyInStock} pints</p>
+        </div>
+        <button type="submit" onClick={() => props.whenBuyClicked(props.id)}>Buy 1 pint</button>
       </div>
-      <button type="submit" onClick={() => props.whenBuyClicked(props.id)}>Buy 1 pint</button>
     </>
   );
 }
-
 Flavor.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,

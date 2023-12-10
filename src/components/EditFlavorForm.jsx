@@ -28,5 +28,4 @@ EditFlavorForm.propTypes = {
   flavor: PropTypes.object,
   onEditTicket: PropTypes.func
 };
-
 export default EditFlavorForm;

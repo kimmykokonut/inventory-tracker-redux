@@ -82,7 +82,7 @@ class IceCreamControl extends React.Component {
     this.setState({
       menuList: updatedMenuList,
       selectedFlavor: null
-    }); 
+    });
   }
   handleCreateFlavor = (newFlavor) => {
     const newMenuList = this.state.menuList.concat(newFlavor);
@@ -93,12 +93,12 @@ class IceCreamControl extends React.Component {
     this.setState({ selectedFlavor: selectFlavor });
   }
   handleEditClick = () => {
-    this.setState({editing: true});
+    this.setState({ editing: true });
   }
   handleEditFlavor = (flavorToEdit) => {
     const editedFlavorList = this.state.menuList
-    .filter(flavor => flavor.id !== this.state.selectedFlavor.id)
-    .concat(flavorToEdit);
+      .filter(flavor => flavor.id !== this.state.selectedFlavor.id)
+      .concat(flavorToEdit);
     this.setState({
       menuList: editedFlavorList,
       editing: false,
@@ -106,11 +106,11 @@ class IceCreamControl extends React.Component {
     });
   }
   handleRestockClick = () => {
-    this.setState({restock: true});
+    this.setState({ restock: true });
   }
   handleRestockFlavor = (updatedQty) => {
     const updatedMenuList = this.state.menuList
-    .map((flavor) => {
+      .map((flavor) => {
         if (flavor.id === this.state.selectedFlavor.id) {
           return {
             ...flavor,
@@ -122,7 +122,7 @@ class IceCreamControl extends React.Component {
     this.setState({
       menuList: updatedMenuList,
       editing: false,
-      selectedFlavor: null, 
+      selectedFlavor: null,
       restock: false,
     });
   }
@@ -132,17 +132,17 @@ class IceCreamControl extends React.Component {
 
     if (this.state.restock) {
       currentVisibleState = <RestockForm
-      flavor = {this.state.selectedFlavor} 
-      onRestockItem={this.handleRestockFlavor}/>
-      buttonText="Return to menu"
+        flavor={this.state.selectedFlavor}
+        onRestockItem={this.handleRestockFlavor} />
+      buttonText = "Return to menu"
     } else if (this.state.editing) {
-      currentVisibleState = <EditFlavorForm 
-      flavor = {this.state.selectedFlavor} 
-      onEditTicket = {this.handleEditFlavor} />
-      buttonText="Return to menu";
+      currentVisibleState = <EditFlavorForm
+        flavor={this.state.selectedFlavor}
+        onEditTicket={this.handleEditFlavor} />
+      buttonText = "Return to menu";
     } else if (this.state.selectedFlavor != null) {
-      currentVisibleState = <FlavorDetail 
-      flavor= {this.state.selectedFlavor}
+      currentVisibleState = <FlavorDetail
+        flavor={this.state.selectedFlavor}
         onClickingEdit={this.handleEditClick} onClickRestock={this.handleRestockClick} />
       buttonText = "Return to Menu";
     } else if (this.state.formVisibleOnPage) {
@@ -152,8 +152,8 @@ class IceCreamControl extends React.Component {
     } else {
       currentVisibleState = <Menu
         menuList={this.state.menuList} onFlavorSelection={this.handleChangingSelectFlavor}
-        onClickingBuy={this.handleBuyClick} 
-        />;
+        onClickingBuy={this.handleBuyClick}
+      />;
       buttonText = "Add custom flavor"
     }
     return (

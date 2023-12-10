@@ -55,9 +55,10 @@ _If this is too much and you just want to see what it looks like, go to my githu
 * To learn more about npm, go here: https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/
 
 ## Known Bugs
-* None known at this time
+* App functional but room for improvement
 * I would like to have a message print if inventory gets to zero or disable the Buy pint button
 * It would be nice to make the header functional once I attain those skills
+* I would like the Edit form to maintain prevState if a field is left blank, currently a blank input won't hold onto previous information because a whole new item is being created, not just mutating the orginal item
 
 ## License
 MIT License. See license.md for further information
