@@ -6,7 +6,6 @@ import EditFlavorForm from "./EditFlavorForm";
 import RestockForm from "./RestockForm";
 import flavorArray from "./../flavorList";
 
-
 class IceCreamControl extends React.Component {
   constructor(props) {
     super(props);

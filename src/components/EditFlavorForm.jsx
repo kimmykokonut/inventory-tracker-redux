@@ -7,10 +7,10 @@ const EditFlavorForm = (props) => {
   function handleEditFormSubmission(e) {
     e.preventDefault();
     props.onEditTicket({
-      name: e.target.name.value,
-      price: e.target.price.value,
-      allergens: e.target.allergens.value,
-      qtyInStock: parseInt(e.target.qtyInStock.value),
+      name: e.target.name.value || flavor.name,
+      price: e.target.price.value || flavor.price,
+      allergens: e.target.allergens.value || flavor.allergens,
+      qtyInStock: parseInt(e.target.qtyInStock.value) || flavor.qtyInStock,
       id: flavor.id
     });
   }

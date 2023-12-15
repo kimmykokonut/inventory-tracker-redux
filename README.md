@@ -48,7 +48,7 @@ _$ npm install uuid_
 
 8.  Now you can access my code. To see it rendered in a browser you can start a development server by typing _$ npm run dev_ in the VS Code terminal and it should open a browser window.  If it doesn't automatically load, type o + ENTER on your keyboard and it will open the server on your default browser.
 
-_If this is too much and you just want to see what it looks like, go to my github pages for this project here:  https://kimmykokonut.github.io/inventory-tracker_ (currently displaying but CSS not finished)
+_If this is too much and you just want to see what it looks like, go to my github pages for this project here:  https://kimmykokonut.github.io/inventory-tracker_
 
 ### Optional:
 * To learn more about Vite, go here: https://vitejs.dev/
@@ -58,7 +58,6 @@ _If this is too much and you just want to see what it looks like, go to my githu
 * App functional but room for improvement
 * I would like to have a message print if inventory gets to zero or disable the Buy pint button
 * It would be nice to make the header functional once I attain those skills
-* I would like the Edit form to maintain prevState if a field is left blank, currently a blank input won't hold onto previous information because a whole new item is being created, not just mutating the orginal item
 
 ## License
 MIT License. See license.md for further information
