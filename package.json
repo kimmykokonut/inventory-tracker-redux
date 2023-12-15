@@ -1,7 +1,7 @@
 {
-  "name": "inventory-tracker",
+  "name": "inventory-tracker-redux",
   "repository": {
-    "url": "git+https://github.com/kimmykokonut/inventory-tracker.git"
+    "url": "git+https://github.com/kimmykokonut/inventory-tracker-redux.git"
   },
   "private": true,
   "version": "0.0.0",

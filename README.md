@@ -1,5 +1,5 @@
 # Praline's Own Made Ice Cream
-## Local Business Inventory Tracker
+## Local Business Inventory Tracker, now with Redux!
 
 #### By Kim Robinson
 
@@ -18,8 +18,9 @@
 * ESLint
 * uuid
 * Git
+* Redux toolkit
 
-## A code review for Epicodus to demonstrate React Fundamentals using CRUD, JSX, components, state and props. 
+## A code review for Epicodus to demonstrate a redux refactor of a React application, including testing. 
 
 ###  This app will allow a user to:
     -see a menu of available flavors 
@@ -31,7 +32,7 @@
 
 ## Setup/Installation Requirements
 
-1. Navigate to my github repository for this project (https://github.com/kimmykokonut/inventory-tracker)
+1. Navigate to my github repository for this project (https://github.com/kimmykokonut/inventory-tracker-redux)
 
 2. Click the 'Fork' button and  you will be taken to a new page where you can give your repository a new name and description. Choose "create fork".
 
@@ -43,12 +44,15 @@
 
 6. On your terminal, type _$ code ._ to open in VS Code.  If you do not have VS Code Editor, you may download here: https://code.visualstudio.com/
 
-7. Once in VS Code, open the terminal there and type _$ npm install_ (to install the packages and dependencies). You may also need to install bootstrap and uuid with these terminal commands: _$ npm install bootstrap_
+7. Once in VS Code, open the terminal there and type 
+_$ npm install_ (to install the packages and dependencies). 
+You may also need to install bootstrap and uuid with these terminal commands: _$ npm install bootstrap_
 _$ npm install uuid_
 
-8.  Now you can access my code. To see it rendered in a browser you can start a development server by typing _$ npm run dev_ in the VS Code terminal and it should open a browser window.  If it doesn't automatically load, type o + ENTER on your keyboard and it will open the server on your default browser.
+8.  Now you can access my code. To see it rendered in a browser you can start a development server by typing 
+_$ npm run dev_ in the VS Code terminal and it should open a browser window.  If it doesn't automatically load, type o + ENTER on your keyboard and it will open the server on your default browser.
 
-_If this is too much and you just want to see what it looks like, go to my github pages for this project here:  https://kimmykokonut.github.io/inventory-tracker_
+_If this is too much and you just want to see what it looks like, go to my github pages for this project here:  https://kimmykokonut.github.io/inventory-tracker-redux_
 
 ### Optional:
 * To learn more about Vite, go here: https://vitejs.dev/
